@@ -1,0 +1,17 @@
+
+{% extends "layout.njk" %}
+
+{% block content %}
+    <main  class="revenues">
+      <h1 class="revenues__accessed">Mais acessadas</h1>
+      <section class="lists">
+          <article class="list__item">
+            <div class="list__figure">
+              <img src="{{food.image}}" alt="{{food.title}}" class="list__img">
+            </div>
+            <h1 class="list__title">{{food.title}}</h1>
+            <p class="list__cooker">por {{food.author}}</p>
+          </article>
+      </section>
+    </main>
+{% endblock content %}
