@@ -35,7 +35,7 @@ body{
 
 .button{
   display: inline-flex;
-  color: #111111;
+  color: var(--titulo-h);
   font-size: 16px;
   text-decoration: none;
   padding: 20px 0;
@@ -49,40 +49,52 @@ body{
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 1fr;
-  min-height: 100px;
+  min-height: 366px;
   padding-left: 5%;
+  position: relative;
+  overflow: hidden;
 }
 
 
 .showcase__title{
-  font-size: 32px;
-  color: #111111;
+  font-size: 2rem;
+  color: var(--titulo-h);
+  line-height: 3rem;
 }
 
 .showcase__text{
-  padding-top: 2%;
   font-size: 18px;
-  color: #000000;
-  line-height: 28px;
+  color: var(--titulo-h);
+  line-height: 1.8rem;
   opacity: 0.6;
 }
 
-.showcase__container-img{
-  position: relative;
-  width: 100%;
-  margin-top: 10%;
+.showcase__img{
+  position: absolute; 
+  right: 10.6%;
+  bottom: 0;
 }
 
-.showcase__img{
-  position: absolute;
-  bottom: 0;
-  right: 8%;
+
+
+/* foods */
+
+.revenues{
+  margin-top: 50px;
+}
+
+.revenues__accessed{
+  font-size: 24px;
+  color: #111111;
+  margin-bottom: 20px;
+  font-weight: 600;
 }
 
 .lists{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
+  cursor: pointer;
 }
 
 .list__img{
@@ -90,3 +102,47 @@ body{
   height: 130px;
   border-radius: 15px;
 }
+
+.list__title{
+  font-size: 18px;
+  color: #111111;
+  font-weight: 500;
+}
+
+.list__cooker{
+  font-size: 14px;
+  color: #777777;
+}
+
+/* footer */
+
+.footer{
+  margin-top: 50px;
+  padding: 1.2rem;
+  background: #EEEEEE;
+  text-align: center;
+  font-size: 14px;
+  color: #999999;
+}
+
+/* Sobre */
+
+.about{
+  margin: 10px 0;
+}
+
+.about__title{
+  font-size: 20px;
+  color: #111111;
+}
+
+.about__title--highlight{
+  margin-top: 30px;
+  font-size: 26px;
+  font-weight: 600;
+}
+.about__text{
+  margin: 20px 0;
+
+}
+
