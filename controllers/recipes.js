@@ -19,10 +19,9 @@ exports.post = function(req, res){
 }
 
 exports.show = function(req, res) {
-    const food = data// Array de receitas carregadas do data.js
+    const food = data // Array de receitas carregadas do data.js
     const foodIndex = req.params.index
-  
-    console.log(recipes[recipeIndex])
+    
     return res.render('receita', { 
         food : food[foodIndex], 
         informacao : food[foodIndex].information.replace(/\n/g, '<br>') 

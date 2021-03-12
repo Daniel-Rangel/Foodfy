@@ -1,14 +1,15 @@
 const modalOver = document.querySelector(".modal-over")
 const modal = document.querySelector(".modal")
-const cards = document.querySelectorAll(".list__item")
+const cards = document.querySelectorAll(".list__item-js")
 const btns = document.querySelectorAll(".btnEsconder")
 const cxEsconder = document.querySelectorAll(".esconder")
 
-for(let card = 0; card < cards.length ; card++ ){
+for(let card in cards ){
   cards[card].addEventListener("click", function(){
     const id = card
-    window.location.href = `/receita/${id}`
+    window.location.href = `/receitas/${id}`
 
+    console.log(id)
   })
 }
 

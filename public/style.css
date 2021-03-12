@@ -14,7 +14,6 @@
 body{
   font-family: 'roboto', sans-serif;
   font-weight: 400;
-  line-height: 28px;
 }
 
 .container{
@@ -146,3 +145,42 @@ body{
 
 }
 
+/* Receita page */
+.lists--page{
+  display: flex;
+  flex-direction: column;
+}
+
+.list__item--page{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.list__img--page{
+  height: 100%;
+}
+
+.list__title--page{
+  margin-top: 50px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.list__cooker--page{
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.recipe__title{
+  font-size: 24px;
+  color: #111111;
+  font-weight: bold;
+}
+
+.recipe__btn{
+  font-family: bold;
+  font-size: 12px;
+  color: #999999;
+  text-transform: uppercase;
+  background-color: transparent;
+}

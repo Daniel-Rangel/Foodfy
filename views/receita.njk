@@ -2,16 +2,19 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-    <main  class="revenues">
-      <h1 class="revenues__accessed">Mais acessadas</h1>
-      <section class="lists">
-          <article class="list__item">
-            <div class="list__figure">
-              <img src="{{food.image}}" alt="{{food.title}}" class="list__img">
+      <section class="lists lists--page">
+          <article class="list__item list__item--page">
+            <div>
+              <img src="{{food.image}}" alt="{{food.title}}" class="list__img list__img--page">
             </div>
-            <h1 class="list__title">{{food.title}}</h1>
-            <p class="list__cooker">por {{food.author}}</p>
+            <h1 class="list__title list__title--page">{{food.title}}</h1>
+            <p class="list__cooker list__cooker--page">por {{food.author}}</p>
+          </article>
+          <article class="recipe">
+            <h2 class="recipe__title">Ingredientes <button class="recipe__btn">esconder</button></h2>
+            <div class="recipe__preparation">
+              <p class="recipe__texto">dasdasd</p>
+            </div>
           </article>
       </section>
-    </main>
 {% endblock content %}
