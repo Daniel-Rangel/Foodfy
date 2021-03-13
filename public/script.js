@@ -1,29 +1,21 @@
-const modalOver = document.querySelector(".modal-over")
-const modal = document.querySelector(".modal")
 const cards = document.querySelectorAll(".list__item-js")
-const btns = document.querySelectorAll(".btnEsconder")
-const cxEsconder = document.querySelectorAll(".esconder")
+const btns = document.querySelectorAll(".recipe__btn")
+const cxEsconder = document.querySelectorAll(".recipe__preparation")
 
-for(let card in cards ){
-  cards[card].addEventListener("click", function(){
-    const id = card
-    window.location.href = `/receitas/${id}`
 
-    console.log(id)
-  })
-}
-
-for(let esc in btns){
-
-  btns[esc].addEventListener("click", function(){
-    
-    if(cxEsconder[esc].classList.toggle('ativo')){
-      btns[esc].innerHTML = 'mostrar'
+btns.forEach((elemento, index) => {
+  btns[index].addEventListener('click', () => {
+    if(cxEsconder[index].classList.toggle('ativo')){
+      btns[index].innerHTML = 'mostrar'
     }else{
-      btns[esc].innerHTML = 'esconder'
+      btns[index].innerHTML = 'esconder'
     }
-
   })
+})
 
-}
-
+cards.forEach( (elemento , index) => {
+  cards[index].addEventListener('click', ()=>{
+    const id = index
+    window.location.href = `/receitas/${id}`
+  })
+})

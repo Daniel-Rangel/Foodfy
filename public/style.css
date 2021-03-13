@@ -93,7 +93,6 @@ body{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
-  cursor: pointer;
 }
 
 .list__img{
@@ -183,4 +182,9 @@ body{
   color: #999999;
   text-transform: uppercase;
   background-color: transparent;
+  cursor: pointer;
+}
+
+.ativo{
+  display: none;
 }
