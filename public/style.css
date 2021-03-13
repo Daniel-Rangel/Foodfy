@@ -105,6 +105,7 @@ body{
   font-size: 18px;
   color: #111111;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .list__cooker{
@@ -145,6 +146,7 @@ body{
 }
 
 /* Receita page */
+
 .lists--page{
   display: flex;
   flex-direction: column;
@@ -170,6 +172,10 @@ body{
   font-size: 20px;
 }
 
+.recipe__content{
+  padding-bottom: 39px;
+}
+
 .recipe__title{
   font-size: 24px;
   color: #111111;
@@ -183,6 +189,21 @@ body{
   text-transform: uppercase;
   background-color: transparent;
   cursor: pointer;
+}
+
+.recipe__preparation{
+  padding-top: 20px;
+}
+
+.recipe__itens{
+  color: #444444;
+  padding-left: 18px;
+}
+
+.recipe__texto{
+  font-size: 18px;
+  color: #444444;
+  line-height: 28px;
 }
 
 .ativo{

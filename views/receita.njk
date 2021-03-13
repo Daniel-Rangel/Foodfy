@@ -10,20 +10,35 @@
             <h1 class="list__title list__title--page">{{food.title}}</h1>
             <p class="list__cooker list__cooker--page">por {{food.author}}</p>
           </article>
+          
           <article class="recipe">
-            <h2 class="recipe__title">Ingredientes <span class="recipe__btn">esconder</span></h2>
-            <div class="recipe__preparation">
-              <p class="recipe__texto">dasdasd</p>
+            <div class="recipe__content">
+              <h2 class="recipe__title">Ingredientes <span class="recipe__btn">esconder</span></h2>
+              <div class="recipe__preparation">
+                <ul class="recipe__itens">
+                    {% for item in food.ingredients %}
+                      <li class="recipe__item">
+                        <p class="recipe__texto">{{item}}</p>
+                      </li>
+                    {% endfor %}
+                </ul>
+              </div>
             </div>
 
-            <h2 class="recipe__title">Ingredientes <span class="recipe__btn">esconder</span></h2>
-            <div class="recipe__preparation">
-              <p class="recipe__texto">dasdasd</p>
+            <div class="recipe__content">
+              <h2 class="recipe__title">Ingredientes <span class="recipe__btn">esconder</span></h2>
+              <div class="recipe__preparation">
+                  {% for item in food.preparation %}
+                    <p class="recipe__texto">{{item}}</p>
+                  {% endfor %}
+              </div>
             </div>
 
-            <h2 class="recipe__title">Ingredientes <span class="recipe__btn">esconder</span></h2>
-            <div class="recipe__preparation">
-              <p class="recipe__texto">dasdasd</p>
+            <div class="recipe__content">
+              <h2 class="recipe__title">Ingredientes <span class="recipe__btn">esconder</span></h2>
+              <div class="recipe__preparation">
+                <p class="recipe__texto">{{informacao}}</p>
+              </div>
             </div>
           </article>
       </section>
