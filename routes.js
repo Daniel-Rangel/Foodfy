@@ -4,8 +4,6 @@ const data = require('./data')
 const recipes = require('./controllers/recipes')
 
 
-
-
 routes.get('/',function(req,res){
     const foods = [] 
     for(let food of data ){
@@ -21,12 +19,10 @@ routes.get('/',function(req,res){
 routes.get('/sobre', recipes.sobre)
 routes.get('/receitas', recipes.receitas)
 routes.get('/receitas/:index', recipes.show)
-//routes.post('/receita', recipes.post)
 
-
-//routes.get('/admin/receita/create' , recipes.create)
+routes.post('/admin/receita', recipes.post)
+routes.get('/admin/receita/create' , recipes.create)
 //routes.get('/admin/recipes/:id/edit', recipes.edit)
-
 //routes.put('/admin/receita', recipes.put)
 //routes.delete('/admin/receita', recipes.delete)
 

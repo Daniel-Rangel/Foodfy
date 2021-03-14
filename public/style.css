@@ -37,7 +37,7 @@ body{
   color: var(--titulo-h);
   font-size: 16px;
   text-decoration: none;
-  padding: 20px 0;
+  padding: 16px 0;
 }
 
 /* showcase */
@@ -93,6 +93,7 @@ body{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
+  cursor: pointer;
 }
 
 .list__img{
@@ -105,7 +106,6 @@ body{
   font-size: 18px;
   color: #111111;
   font-weight: 500;
-  cursor: pointer;
 }
 
 .list__cooker{
@@ -150,6 +150,7 @@ body{
 .lists--page{
   display: flex;
   flex-direction: column;
+  cursor: initial;
 }
 
 .list__item--page{
@@ -208,4 +209,52 @@ body{
 
 .ativo{
   display: none;
+}
+
+/* form */
+.menu--black{
+  background-color: #111111;
+  margin-bottom: 55px;
+}
+
+.form__create{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.form__recepe{
+  margin-bottom: 30px;
+  font-size: 16px;
+  color: #111111;
+  font-weight: bold;
+}
+
+.form__input{
+  width: 100%;
+  font-size: 18px;
+  padding: 4px 8px ;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.recipe__btn--create{
+  font-size: 16px;
+  color: #6558C3;
+  font-weight: bold;
+  font-family: 'roboto', sans-serif;
+  text-transform: capitalize;
+  text-align: right;
+  margin-top: 16px;
+}
+
+.recipe__btn--create-2{
+  background: #6558C3;
+  border-radius: 4px;
+  padding: 8px 20px;
+  color: #fff;
+  font-size: 16px;
+  font-family: 'roboto', sans-serif;
+  text-transform: capitalize;
 }
