@@ -1,5 +1,33 @@
 {% extends "layout.njk" %}
 
+{% block header %}
+  <header class="menu--black">
+      <nav class="menu container">
+          <a href="/" class="button">
+              <img src="/img/logo-1.png" alt="Logo">
+          </a>
+      </nav>
+  </header>
+{% endblock header %}
+
 {% block content %}
-test
+    <main class="revenues">
+      <h2 class="renues__manage">Gerenciar receitas</h2>
+      <section class="lists lists--columns">
+        {% for food in foods %}
+          <article class="list__item list__item--columns">
+            <div class="list__figure">
+              <img src="{{food.image}}" alt="{{food.title}}" class="list__img list__img--adm">
+            </div>
+            <div> 
+              <h1 class="list__title">{{food.title}}</h1>
+              <p class="list__cooker">por {{food.author}}</p>
+              <form action="get">
+                <button type="submit" class="btn">Visualizar</button>
+              </form>
+            </div>
+          </article>
+        {% endfor %}
+      </section>
+    </main>
 {% endblock content %}

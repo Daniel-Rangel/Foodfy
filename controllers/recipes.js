@@ -27,3 +27,18 @@ exports.show = function(req, res) {
         informacao : food[foodIndex].information.replace(/\n/g, '<br>') 
     } )
 }
+
+exports.index = function(req, res) {
+    
+    return res.render('admin/recipes' , {foods : data})
+}
+
+exports.show1 = function(req, res) {
+    const food = data // Array de receitas carregadas do data.js
+    const foodIndex = req.params.id
+   
+    return res.render('admin/recipe', { 
+        food : food[foodIndex], 
+        informacao : food[foodIndex].information.replace(/\n/g, '<br>') 
+    } )
+}

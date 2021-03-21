@@ -10,7 +10,7 @@
   --size-text-p1: 1rem; /* 16px */
   --size-text-p2: 1.13rem; /* 18px */
   --size-text-p3: 2rem; /* 32px */
-  --size-text-p4: 1.3rem;
+  --size-text-p4: 1.2rem;
 
   /* separacao */
   --gap-1: 1.3rem; /* 20px */
@@ -32,6 +32,10 @@ body{
 .container{
   max-width: 940px;
   margin: 0 auto;
+}
+
+.container--height{
+  min-height: calc(33rem - 60px);
 }
 
 .menu{
@@ -105,13 +109,32 @@ body{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: var(--gap-1);
+}
+
+.lists--pointer{
   cursor: pointer;
+}
+
+.lists--columns{
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 50px;
+}
+
+.list__item--columns{
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  gap: 8px;
+  line-height: 1.6rem;
 }
 
 .list__img{
   width:100%;
-  height: 130px;
+  min-height: 120px;
   border-radius: 15px;
+}
+
+.list__img--adm{
+  min-height: 80px;
 }
 
 .list__title{
@@ -162,7 +185,6 @@ body{
 .lists--page{
   display: flex;
   flex-direction: column;
-  cursor: initial;
 }
 
 .list__item--page{
@@ -223,6 +245,12 @@ body{
   display: none;
 }
 
+.item_page{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
 /* form */
 .menu--black{
   background-color: #111111;
@@ -269,4 +297,23 @@ body{
   font-size: 16px;
   font-family: 'roboto', sans-serif;
   text-transform: capitalize;
+}
+
+/*btn componente */
+
+.btn{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #6558C3;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.btn--editar{
+  padding: 8px 20px;
+  background-color: #6558C3;
+  color: #fff;
+  border-radius: 4px;
 }
