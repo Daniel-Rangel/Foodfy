@@ -22,9 +22,7 @@
             <div> 
               <h1 class="list__title">{{food.title}}</h1>
               <p class="list__cooker">por {{food.author}}</p>
-              <form action="get">
-                <button type="submit" class="btn">Visualizar</button>
-              </form>
+              <a href="/admin/recipes/{{food.id}}" class="btn">Visualizar</a>
             </div>
           </article>
         {% endfor %}

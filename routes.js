@@ -25,7 +25,9 @@ routes.get("/admin/recipes/create", recipes.create) // Mostrar formulário de no
 routes.get("/admin/recipes/:id", recipes.show1) // Exibir detalhes de uma receita
 //routes.get("/admin/recipes/:id/edit", recipes.edit) // Mostrar formulário de edição de receita
 
-//routes.post("/admin/recipes", recipes.post) // Cadastrar nova receita
+routes.post("/admin", recipes.post) // Cadastrar nova receita
+routes.get("/admin", recipes.admin)
+
 //routes.put("/admin/recipes", recipes.put) // Editar uma receita
 //routes.delete("/admin/recipes", recipes.delete) // Deletar uma receita
 

@@ -12,7 +12,7 @@
 {% endblock header %}
 
 {% block content %}
-      <form action="" class="item_page">
+      <form methods="POST" action="" class="item_page">
         <h2>Receita: {{food.title}}</h2>
         <button type="submit" class="btn btn--editar">Editar receita</button>
       </form>
@@ -42,16 +42,20 @@
             </div>
 
             <div class="recipe__content">
-              <h2 class="recipe__title">Ingredientes <span class="recipe__btn">esconder</span></h2>
+              <h2 class="recipe__title">Modo de Preparo <span class="recipe__btn">esconder</span></h2>
               <div class="recipe__preparation">
-                  {% for item in food.preparation %}
+                <ul class="recipe__itens">
+                {% for item in food.preparation %}
+                  <li class="recipe__item">
                     <p class="recipe__texto">{{item}}</p>
-                  {% endfor %}
+                  </li>
+                {% endfor %}
+                </ul>
               </div>
             </div>
 
             <div class="recipe__content">
-              <h2 class="recipe__title">Ingredientes <span class="recipe__btn">esconder</span></h2>
+              <h2 class="recipe__title">Informações adicionais <span class="recipe__btn">esconder</span></h2>
               <div class="recipe__preparation">
                 <p class="recipe__texto">{{informacao}}</p>
               </div>

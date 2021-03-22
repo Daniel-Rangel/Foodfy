@@ -303,6 +303,7 @@ body{
 
 .btn{
   background-color: transparent;
+  text-decoration: none;
   border: none;
   outline: none;
   cursor: pointer;
