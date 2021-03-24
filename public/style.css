@@ -98,6 +98,10 @@ body{
   margin-top: 50px;
 }
 
+.revenues__manage{
+
+}
+
 .revenues__accessed{
   font-size: var(--size-title-h2);
   color: #111111;
@@ -117,7 +121,6 @@ body{
 
 .lists--columns{
   grid-template-columns: repeat(2, 1fr);
-  margin-top: 50px;
 }
 
 .list__item--columns{
@@ -257,10 +260,11 @@ body{
   margin-bottom: 55px;
 }
 
-.form__create{
+.form__create,
+.revenues__manage{
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .form__recepe{
@@ -268,6 +272,10 @@ body{
   font-size: 16px;
   color: #111111;
   font-weight: bold;
+}
+
+.form__recepe:first-child{
+  margin-top: 30px;
 }
 
 .form__input{
@@ -304,17 +312,28 @@ body{
 .btn{
   background-color: transparent;
   text-decoration: none;
-  border: none;
+  border-radius: 4px;
   outline: none;
   cursor: pointer;
   color: #6558C3;
   font-weight: bold;
   font-size: 14px;
+  padding: 8px 20px;
+  letter-spacing: 1px;
+}
+
+.btn--new-recipe{
+  background-color: #02b954;
+  color: #fff;
 }
 
 .btn--editar{
-  padding: 8px 20px;
   background-color: #6558C3;
   color: #fff;
-  border-radius: 4px;
+}
+
+.btn--padding{
+  padding: 0;
+  letter-spacing: normal;
+
 }

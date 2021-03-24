@@ -12,7 +12,10 @@
 
 {% block content %}
     <main class="revenues">
-      <h2 class="renues__manage">Gerenciar receitas</h2>
+      <div class="revenues__manage">
+        <h2 class="revenues__title">Gerenciar receitas</h2>
+        <a href="/admin/recipes/create" class="btn btn--new-recipe">Nova Receita</a>
+      </div>
       <section class="lists lists--columns">
         {% for food in foods %}
           <article class="list__item list__item--columns">
@@ -22,7 +25,7 @@
             <div> 
               <h1 class="list__title">{{food.title}}</h1>
               <p class="list__cooker">por {{food.author}}</p>
-              <a href="/admin/recipes/{{food.id}}" class="btn">Visualizar</a>
+              <a href="/admin/recipes/{{food.id}}" class="btn btn--padding">Visualizar</a>
             </div>
           </article>
         {% endfor %}

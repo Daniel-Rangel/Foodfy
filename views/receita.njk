@@ -26,16 +26,20 @@
             </div>
 
             <div class="recipe__content">
-              <h2 class="recipe__title">Ingredientes <span class="recipe__btn">esconder</span></h2>
+              <h2 class="recipe__title">Modo de preparo <span class="recipe__btn">esconder</span></h2>
               <div class="recipe__preparation">
+                <ul class="recipe__itens">
                   {% for item in food.preparation %}
-                    <p class="recipe__texto">{{item}}</p>
+                      <li class="recipe__item">
+                        <p class="recipe__texto">{{item}}</p>
+                      </li>
                   {% endfor %}
+                </ul>
               </div>
             </div>
 
             <div class="recipe__content">
-              <h2 class="recipe__title">Ingredientes <span class="recipe__btn">esconder</span></h2>
+              <h2 class="recipe__title">Informações adicionais <span class="recipe__btn">esconder</span></h2>
               <div class="recipe__preparation">
                 <p class="recipe__texto">{{informacao}}</p>
               </div>
