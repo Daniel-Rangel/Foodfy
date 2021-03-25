@@ -22,10 +22,11 @@ cards.forEach( (x , index) => {
 })
 
 boxInputs.forEach((x , i)=>{
-  console.log(x)
-  console.log(includInput[i])
   includInput[i].addEventListener('click', ()=>{
-    let input = document.createElement(`<input type="text" name="ingredients" id="ingrediente_receita" class="form__input">`)
+    let input = document.createElement('input')
+    input.type = 'text'
+    input.name = boxInputs[i].firstElementChild.getAttribute('name')
+    input.classList.add('form__input')
     boxInputs[i].appendChild(input)
   })
 })

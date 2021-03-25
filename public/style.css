@@ -320,5 +320,6 @@ body{
 }
 
 .btn--primare{
+  display: block;
   margin-top: 10px;
 }
