@@ -1,5 +1,6 @@
 const { query } = require("express")
 const data = require('../data')
+const fs = require('fs')
 
 exports.sobre = function(req, res){
     return res.render('sobre')
@@ -54,6 +55,8 @@ exports.post = function(req, res){
     let {} = req.body
     
     console.log(req.body)
+
+    fs.watchFile()
 
     return res.redirect('/admin/recipes')
 }

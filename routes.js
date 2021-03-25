@@ -17,8 +17,8 @@ routes.get('/',function(req,res){
 })
   
 routes.get('/sobre', recipes.sobre)
-routes.get('/receitas', recipes.receitas)
-routes.get('/receitas/:index', recipes.show)
+routes.get('/recipes', recipes.receitas)
+routes.get('/recipes/:index', recipes.show)
 
 routes.get("/admin/recipes", recipes.index) // Mostrar a lista de receitas
 routes.get("/admin/recipes/create", recipes.create) // Mostrar formulário de nova receita

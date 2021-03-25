@@ -287,26 +287,6 @@ body{
   margin-top: 10px;
 }
 
-.recipe__btn--create{
-  font-size: 16px;
-  color: #6558C3;
-  font-weight: bold;
-  font-family: 'roboto', sans-serif;
-  text-transform: capitalize;
-  text-align: right;
-  margin-top: 16px;
-}
-
-.recipe__btn--create-2{
-  background: #6558C3;
-  border-radius: 4px;
-  padding: 8px 20px;
-  color: #fff;
-  font-size: 16px;
-  font-family: 'roboto', sans-serif;
-  text-transform: capitalize;
-}
-
 /*btn componente */
 
 .btn{
@@ -332,8 +312,13 @@ body{
   color: #fff;
 }
 
-.btn--padding{
+.btn--padding,
+.btn--primare{
   padding: 0;
   letter-spacing: normal;
 
+}
+
+.btn--primare{
+  margin-top: 10px;
 }
