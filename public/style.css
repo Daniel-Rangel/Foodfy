@@ -18,10 +18,10 @@
 }
 
 *{
-  margin: 0;
-  padding: 0;
   border: 0;
   box-sizing: border-box; /* não deixa ultrapassar o limete do box */
+  margin: 0;
+  padding: 0;
 }
 
 body{
@@ -50,44 +50,44 @@ body{
 }
 
 .button{
-  display: inline-flex;
   color: var(--titulo-h);
+  display: inline-flex;
   font-size: var(--titulo-text-p1);
-  text-decoration: none;
   padding: var(--space) 0;
+  text-decoration: none;
 }
 
 /* showcase */
 
 .showcase{
-  border-radius: 30px;
-  background-color:#FBDFDB;
-  display: grid;
   align-items: center;
+  background-color:#FBDFDB;
+  border-radius: 30px;
+  display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 366px;
+  overflow: hidden;
   padding-left: 5%;
   position: relative;
-  overflow: hidden;
 }
 
 .showcase__title{
-  font-size: var(--size-text-p3);
   color: var(--titulo-h);
+  font-size: var(--size-text-p3);
   line-height: 3rem;
 }
 
 .showcase__text{
-  font-size: var(--size-text-p2);
   color: var(--titulo-h);
+  font-size: var(--size-text-p2);
   line-height: 1.8rem;
   opacity: 0.6;
 }
 
 .showcase__img{
+  bottom: 0;
   position: absolute; 
   right: 10.6%;
-  bottom: 0;
 }
 
 
@@ -98,21 +98,17 @@ body{
   margin-top: 50px;
 }
 
-.revenues__manage{
-
-}
-
 .revenues__accessed{
-  font-size: var(--size-title-h2);
   color: #111111;
-  margin-bottom: 20px;
+  font-size: var(--size-title-h2);
   font-weight: 600;
+  margin-bottom: 20px;
 }
 
 .lists{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   gap: var(--gap-1);
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .lists--pointer{
@@ -125,15 +121,15 @@ body{
 
 .list__item--columns{
   display: grid;
-  grid-template-columns: 40% 1fr;
   gap: 8px;
+  grid-template-columns: 40% 1fr;
   line-height: 1.6rem;
 }
 
 .list__img{
-  width:100%;
-  min-height: 120px;
   border-radius: 15px;
+  min-height: 120px;
+  width:100%;
 }
 
 .list__img--adm{
@@ -141,25 +137,25 @@ body{
 }
 
 .list__title{
-  font-size: var(--size-text-p2);
   color: #111111;
+  font-size: var(--size-text-p2);
   font-weight: 500;
 }
 
 .list__cooker{
-  font-size: 14px;
   color: #777777;
+  font-size: 14px;
 }
 
 /* footer */
 
 .footer{
+  background: #EEEEEE;
+  color: #999999;
+  font-size: 14px;
   margin-top: 50px;
   padding: 1.2rem;
-  background: #EEEEEE;
   text-align: center;
-  font-size: 14px;
-  color: #999999;
 }
 
 /* Sobre */
@@ -169,14 +165,14 @@ body{
 }
 
 .about__title{
-  font-size: var(--size-text-p4);
   color: #111111;
+  font-size: var(--size-text-p4);
 }
 
 .about__title--highlight{
-  margin-top: 30px;
   font-size: var(--size-title-h2);
   font-weight: 600;
+  margin-top: 30px;
 }
 .about__text{
   margin: 20px 0;
@@ -221,12 +217,12 @@ body{
 }
 
 .recipe__btn{
+  background-color: transparent;
+  color: #999999;
+  cursor: pointer;
   font-family: bold;
   font-size: 12px;
-  color: #999999;
   text-transform: uppercase;
-  background-color: transparent;
-  cursor: pointer;
 }
 
 .recipe__preparation{
@@ -239,8 +235,8 @@ body{
 }
 
 .recipe__texto{
-  font-size: var(--size-text-p2);
   color: #444444;
+  font-size: var(--size-text-p2);
   line-height: 28px;
 }
 
@@ -268,38 +264,44 @@ body{
 }
 
 .form__recepe{
-  margin-bottom: 30px;
-  font-size: 16px;
   color: #111111;
+  font-size: 16px;
   font-weight: bold;
+  margin-bottom: 30px;
 }
 
 .form__recepe:first-child{
   margin-top: 30px;
 }
 
+.form__box{
+  margin-top: 10px;
+  gap: 8px;
+  align-items: center;
+}
+
 .form__input{
-  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #DDDDDD;
   font-size: var(--size-text-p2);
   padding: 4px 8px;
-  border: 1px solid #DDDDDD;
-  border-radius: 4px;
-  margin-top: 10px;
+  width: 100%;
 }
+
 
 /*btn componente */
 
 .btn{
   background-color: transparent;
-  text-decoration: none;
   border-radius: 4px;
-  outline: none;
-  cursor: pointer;
   color: #6558C3;
-  font-weight: bold;
+  cursor: pointer;
   font-size: 14px;
-  padding: 8px 20px;
+  font-weight: bold;
   letter-spacing: 1px;
+  outline: none;
+  padding: 8px 20px;
+  text-decoration: none;
 }
 
 .btn--new-recipe{
@@ -312,14 +314,35 @@ body{
   color: #fff;
 }
 
+.btn--delete{
+  background-color: rgba(255, 0, 0, 0.7);
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  padding: 4px 8px;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.btn--delete:hover{
+  background-color: rgba(255, 0, 0, 0.8);
+  color: #fff;
+}
+
 .btn--padding,
 .btn--primare{
-  padding: 0;
   letter-spacing: normal;
+  padding: 0;
 
 }
 
 .btn--primare{
-  display: block;
   margin-top: 10px;
+}
+
+.btn--recipe{
+  color: #999999;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0;
+  text-transform: uppercase;
 }

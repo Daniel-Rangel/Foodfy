@@ -11,8 +11,7 @@ routes.get('/',function(req,res){
         foods.push(food)
       }
     }
-  
-
+    
     return res.render('index' , {foods})
 })
   
