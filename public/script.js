@@ -2,6 +2,7 @@ const cards = document.querySelectorAll(".list__item-js")
 const btns = document.querySelectorAll(".btn--recipe")
 const cxEsconder = document.querySelectorAll(".recipe__preparation")
 const includInput = document.querySelectorAll(".add-input-js")
+const deleteInput = document.querySelectorAll(".del-input-js")
 const boxInputs = document.querySelectorAll(".box-js")
 
 btns.forEach((x, index) => {
@@ -22,24 +23,33 @@ cards.forEach( (x , index) => {
 })
 
 boxInputs.forEach((x , i)=>{
+  let deleteBtnInput = document.querySelectorAll(".delete-js")
+
   includInput[i].addEventListener('click', ()=>{
+
     let nameText = boxInputs[i].firstElementChild.getAttribute('name')
     
-    let inputButton = createInput('button', 'x', '' , 'btn btn--delete')
-    let inputButton2 = createInput('button', 'x', '' , 'btn btn--delete')
-    let inputText = createInput('text', '', nameText , 'form__input')
+    let inputButton = createInput('button', 'x', '' , 'btn btn--delete delete-js')
+    let inputText = createInput('text', '', nameText , 'form__input del-input-js')
 
     boxInputs[i].style.display = 'grid'
-    boxInputs[i].style.gridTemplateColumns = '1fr 5%'
+    boxInputs[i].style.gridTemplateColumns = '1fr 45px'
 
-    if(boxInputs[i].children.length < 2){
-      boxInputs[i].appendChild(inputButton2)
+    if(deleteBtnInput[i].classList.contains('btn--esconder')){
+      deleteBtnInput[i].classList.remove('btn--esconder')
     }
-
+    
     boxInputs[i].appendChild(inputText)
     boxInputs[i].appendChild(inputButton)
 
+    deleteBtnInput = document.querySelectorAll(".delete-js")
   })
+
+  deleteBtnInput[i].addEventListener('click', () => {
+    console.log(deleteBtnInput.length)
+    console.log(x)
+  })
+  
 })
 
 const createInput = (type, val, denomination, classes ) => {

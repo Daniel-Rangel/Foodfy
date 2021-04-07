@@ -346,3 +346,7 @@ body{
   padding: 0;
   text-transform: uppercase;
 }
+
+.btn--esconder{
+  display: none;
+}

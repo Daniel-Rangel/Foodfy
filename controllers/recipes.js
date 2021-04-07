@@ -43,22 +43,22 @@ exports.show1 = function(req, res) {
 }
 
 exports.post = function(req, res){
-
-    const keys = Object.keys(req.body)
-
+    //const keys = Object.keys(req.body)
+/* 
     for(key of keys) {
         if(req.body[key] == ""){
             return res.send("por favor, preencha todos os campos")
         }
     }
-
-    let {} = req.body
+ */
+    //let {} = req.body
     
     console.log(req.body)
 
     fs.watchFile()
 
-    return res.redirect('/admin/recipes')
+    //return res.redirect('/admin/recipes')
+    return res.send(req.body)
 }
 
 exports.create = function(req, res){

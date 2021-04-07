@@ -11,7 +11,20 @@
 <div class="form__recepe">
     <label for="ingrediente_receita" class="form__description">Ingredientes</label>
     <div class="form__box box-js">
-        <input type="text" name="ingredients" id="ingrediente_receita" class="form__input">
+        <input 
+            type="text" 
+            name="ingredients" 
+            id="ingrediente_receita"
+            class="form__input del-input-js"
+        >
+
+        <input 
+            type="button"
+            value="x"
+            name="preparation" 
+            id="preparo_receita" 
+            class="btn btn--delete delete-js btn--esconder"
+        >
     </div>
     <button type="button" class="btn btn--primare add-input-js">Adicionar novo ingrediente</button>
 </div>
@@ -19,7 +32,20 @@
 <div class="form__recepe">
     <label for="preparo_receita" class="form__description">Modo de preparo</label>
     <div class="form__box box-js">
-        <input type="text" name="preparation" id="preparo_receita" class="form__input">
+        <input 
+            type="text" 
+            name="preparation" 
+            id="preparo_receita" 
+            class="form__input del-input-js"
+        >
+        
+        <input 
+            type="button"
+            value="x"
+            name="preparation" 
+            id="preparo_receita" 
+            class="btn btn--delete delete-js btn--esconder"
+        >
     </div>
     <button  type="button" class="btn btn--primare add-input-js">Adicionar novo passo</button>
 </div>
