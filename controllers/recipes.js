@@ -1,5 +1,5 @@
 const { query } = require("express")
-const data = require('../data')
+const data = require('../data.json')
 const fs = require('fs')
 
 exports.sobre = function(req, res){
@@ -33,7 +33,7 @@ exports.index = function(req, res) {
 }
 
 exports.show1 = function(req, res) {
-    const food = data // Array de receitas carregadas do data.js
+    const food = data.receitas // Array de receitas carregadas do data.js
     const foodIndex = req.params.id
    
     return res.render('admin/recipe', { 
@@ -43,22 +43,45 @@ exports.show1 = function(req, res) {
 }
 
 exports.post = function(req, res){
-    //const keys = Object.keys(req.body)
-/* 
+    const keys = Object.keys(req.body)
+
+    console.log(keys)
     for(key of keys) {
         if(req.body[key] == ""){
             return res.send("por favor, preencha todos os campos")
         }
     }
- */
-    //let {} = req.body
-    
-    console.log(req.body)
 
-    fs.watchFile()
+    let {
+        image,
+        title,
+        ingredients,
+        preparation,
+        information
+    } = req.body
+
+    let id = 1
+    const latrecipes = data.receitas[data.receitas.length - 1]
+    if(latrecipes){
+        id = latrecipes.id + 1
+    }
+
+    data.receitas.push({
+        id,
+        image,
+        title,
+        ingredients,
+        preparation,
+        information
+    })
+
+    fs.writeFile('data.json', JSON.stringify(data, null, 2), function(err){
+        if(err) return res.send('erro ao requisitar dados')
+
+        return res.redirect(`/admin/recipes`)
+    })
 
     //return res.redirect('/admin/recipes')
-    return res.send(req.body)
 }
 
 exports.create = function(req, res){
