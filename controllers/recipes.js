@@ -7,11 +7,11 @@ exports.sobre = function(req, res){
 }
 
 exports.receitas = function(req, res){
-    return res.render('receitas', {foods : data })
+    return res.render('receitas', {foods : data.receitas })
 }
 
 exports.show = function(req, res) {
-    const food = data // Array de receitas carregadas do data.js
+    const food = data.receitas // Array de receitas carregadas do data.js
     const foodIndex = req.params.index
     
     return res.render('receita', { 
@@ -22,20 +22,14 @@ exports.show = function(req, res) {
 
 // admin
 exports.index = function(req, res) {
-    const foods = data
-    let id = 0
-
-    for(food of foods){
-        food.id = id++
-    }
-
-    return res.render('admin/recipes' , {foods : data} )
+    return res.render('admin/recipes' , {foods : data.receitas} )
 }
 
 exports.show1 = function(req, res) {
     const food = data.receitas // Array de receitas carregadas do data.js
     const foodIndex = req.params.id
    
+    console.log(food)
     return res.render('admin/recipe', { 
         food : food[foodIndex], 
         informacao : food[foodIndex].information.replace(/\n/g, '<br>') 
@@ -55,6 +49,7 @@ exports.post = function(req, res){
     let {
         image,
         title,
+        author,
         ingredients,
         preparation,
         information
@@ -70,6 +65,7 @@ exports.post = function(req, res){
         id,
         image,
         title,
+        author,
         ingredients,
         preparation,
         information

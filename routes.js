@@ -1,12 +1,12 @@
 const express = require('express')
 const routes = express.Router()
-const data = require('./data')
+const data = require('./data.json')
 const recipes = require('./controllers/recipes')
 
 
 routes.get('/',function(req,res){
     const foods = [] 
-    for(let food of data ){
+    for(let food of data.receitas ){
       if(foods.length < 6){
         foods.push(food)
       }
