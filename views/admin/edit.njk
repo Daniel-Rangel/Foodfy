@@ -1,0 +1,24 @@
+{% extends "layout.njk" %}
+
+{% block header %}
+  <header class="menu--black">
+      <nav class="menu container">
+          <a href="/" class="button">
+              <img src="/img/logo-1.png" alt="Logo">
+          </a>
+      </nav>
+  </header>
+{% endblock header %}
+
+{% block content %}
+    <form method="POST" action="/admin/recipes" class="form create">
+      <div class="form__create">
+        <h2>Criando receita</h2>
+        <div> 
+            <button type="submit" class="btn btn--editar">Editar</button>
+            <button type="submit" class="btn btn--excluir">Excluir</button>
+        </div>
+      </div>
+      {% include 'admin/filds.njk'%}
+    </form>
+{% endblock content%}

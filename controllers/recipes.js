@@ -29,7 +29,6 @@ exports.show1 = function(req, res) {
     const food = data.receitas // Array de receitas carregadas do data.js
     const foodIndex = req.params.id
    
-    console.log(food)
     return res.render('admin/recipe', { 
         food : food[foodIndex], 
         informacao : food[foodIndex].information.replace(/\n/g, '<br>') 
@@ -39,7 +38,6 @@ exports.show1 = function(req, res) {
 exports.post = function(req, res){
     const keys = Object.keys(req.body)
 
-    console.log(keys)
     for(key of keys) {
         if(req.body[key] == ""){
             return res.send("por favor, preencha todos os campos")
@@ -82,4 +80,16 @@ exports.post = function(req, res){
 
 exports.create = function(req, res){
     return res.render('admin/create')
+}
+
+exports.edit = function(req, res){
+    const id = req.params.id
+
+    for(receita of data.receitas){
+        if(receita.id == id){
+            console.log(receita.author)
+        }
+    }
+
+   return res.render('admin/edit')
 }

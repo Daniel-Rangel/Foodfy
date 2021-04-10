@@ -320,6 +320,11 @@ body{
   color: #fff;
 }
 
+.btn--excluir{
+  background-color: rgba(255, 0, 0, 0.7);
+  color: #fff;
+}
+
 .btn--delete{
   background-color: rgba(255, 0, 0, 0.7);
   color: #fff;

@@ -14,7 +14,7 @@
 {% block content %}
       <form methods="POST" action="" class="item_page">
         <h2>Receita: {{food.title}}</h2>
-        <button type="submit" class="btn btn--editar">Editar receita</button>
+        <a href="/admin/recipes/{{food.id}}/edit" class="btn btn--editar">Editar receita</a>
       </form>
 
       <section class="lists lists--page">
