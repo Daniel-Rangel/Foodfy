@@ -23,7 +23,6 @@ cards.forEach( (x , index) => {
 })
 
 boxInputs.forEach((x , i)=>{
-  let deleteBtnInput = document.querySelectorAll(".delete-js")
 
   includInput[i].addEventListener('click', ()=>{
 
@@ -34,20 +33,10 @@ boxInputs.forEach((x , i)=>{
 
     boxInputs[i].style.display = 'grid'
     boxInputs[i].style.gridTemplateColumns = '1fr 45px'
-
-    if(deleteBtnInput[i].classList.contains('btn--esconder')){
-      deleteBtnInput[i].classList.remove('btn--esconder')
-    }
     
     boxInputs[i].appendChild(inputText)
     boxInputs[i].appendChild(inputButton)
 
-    deleteBtnInput = document.querySelectorAll(".delete-js")
-  })
-
-  deleteBtnInput[i].addEventListener('click', () => {
-    console.log(deleteBtnInput.length)
-    console.log(x)
   })
   
 })

@@ -83,13 +83,45 @@ exports.create = function(req, res){
 }
 
 exports.edit = function(req, res){
-    const id = req.params.id
+    const { id } = req.params
 
-    for(receita of data.receitas){
-        if(receita.id == id){
-            console.log(receita.author)
-        }
+    const foundRecipe = data.receitas.find((recipe) => {
+        return recipe.id == id
+    })
+
+    if(!foundRecipe) return res.send('Recipe not foud')
+
+    const food = {
+        ...foundRecipe
     }
 
-   return res.render('admin/edit')
+    return res.render('admin/edit', {food})
+}
+
+exports.put = function(req, res){
+    const { id } = req.body
+    let index = 0
+
+    const foundRecipe = data.receitas.find(function(recipe, foundIndex){
+        if(id == recipe.id){
+            index = foundIndex
+            return true
+        }
+    })
+
+    if(!foundRecipe) return res.send("Recipe not found")
+
+    const recipe = {
+        ...foundRecipe,
+        ...req.body,
+        id: Number(req.body.id)
+    }
+
+    data.receitas[index] = recipe
+
+    fs.writeFile('data.json', JSON.stringify(data,null,2) , function(err){
+        if(err) return res.send('write error')
+    })
+
+    res.redirect(`/admin/recipes/${id}`)
 }

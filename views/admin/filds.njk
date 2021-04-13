@@ -1,29 +1,49 @@
 
 <div class="form__recepe">
     <label for="author_receita" class="form__description">Nome do(a) Autor</label>
-    <input type="text" name="author" id="author_receita" class="form__input">
+    <input 
+        type="text" 
+        name="author"
+        value="{{food.author}}"
+        id="author_receita" 
+        class="form__input">
 </div>
 
 <div class="form__recepe">
     <label for="title_receita" class="form__description">Nome da Receita</label>
-    <input type="text" name="title" id="title_receita" class="form__input">
+    <input 
+        type="text" 
+        name="title" 
+        value="{{food.title}}"
+        id="title_receita" 
+        class="form__input"
+    >
 </div>
 
 <div class="form__recepe">
     <label for="img_receita" class="form__description">Imagem da Receita</label>
-    <input type="url" name="image"  id="img_receita" class="form__input">
+    <input 
+        type="url" 
+        name="image" 
+        value="{{food.image}}" 
+        id="img_receita" 
+        class="form__input"
+    >
 </div>
 
 <div class="form__recepe">
     <label for="ingrediente_receita" class="form__description">Ingredientes</label>
     <div class="form__box box-js">
+        {% for ingredients in food.ingredients %}
+        
         <input 
             type="text" 
             name="ingredients" 
+            value="{{ingredients}}"
             id="ingrediente_receita"
             class="form__input del-input-js"
         >
-
+        {% endfor %}
         <input 
             type="button"
             value="x"
@@ -38,12 +58,16 @@
 <div class="form__recepe">
     <label for="preparo_receita" class="form__description">Modo de preparo</label>
     <div class="form__box box-js">
+        {% for preparation in food.preparation %}
         <input 
             type="text" 
-            name="preparation" 
+            name="preparation"
+            value="{{preparation}}"
             id="preparo_receita" 
             class="form__input del-input-js"
         >
+        {% endfor %}
+        
         
         <input 
             type="button"
@@ -58,5 +82,10 @@
 
 <div class="form__recepe">
     <label for="info_receita" class="form__description">Informações adicionais</label>
-    <textarea name="information" id="info_receita" cols="30" rows="10" class="form__input"></textarea>
+    <textarea 
+        name="information"
+        id="info_receita" 
+        cols="30" rows="10" 
+        class="form__input"
+    >{{food.information}}</textarea>
 </div>
