@@ -10,7 +10,7 @@ exports.receitas = function(req, res){
     return res.render('receitas', {foods : data.receitas })
 }
 
-exports.show = function(req, res) {
+exports.show = function(req, res){
     const food = data.receitas // Array de receitas carregadas do data.js
     const foodIndex = req.params.index
     
@@ -21,11 +21,11 @@ exports.show = function(req, res) {
 }
 
 // admin
-exports.index = function(req, res) {
+exports.index = function(req, res){
     return res.render('admin/recipes' , {foods : data.receitas} )
 }
 
-exports.show1 = function(req, res) {
+exports.show1 = function(req, res){
     const food = data.receitas // Array de receitas carregadas do data.js
     const foodIndex = req.params.id
    
@@ -108,6 +108,7 @@ exports.put = function(req, res){
             return true
         }
     })
+    console.log(req.body)
 
     if(!foundRecipe) return res.send("Recipe not found")
 
@@ -124,4 +125,20 @@ exports.put = function(req, res){
     })
 
     res.redirect(`/admin/recipes/${id}`)
+}
+
+exports.delete = (req, res) => {
+    const { id } = req.body
+
+    const filteredRecipes = data.receitas.filter((recipes)=>{
+        return recipes.id != id
+    })
+
+    data.receitas = filteredRecipes
+
+    fs.writeFile('data.json', JSON.stringify(data,null,2), (err)=>{
+        if(err) return res.send('write error')
+    })
+
+    res.redirect(`/admin/recipes`)
 }
