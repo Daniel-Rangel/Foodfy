@@ -11,24 +11,20 @@
 {% endblock header %}
 
 {% block content %}
-<form method="POST" action="/admin/recipes?_method=PUT" class="form create">
-  <div class="form__create">
-      <h2>Editando Receita</h2>
-      <div> 
-        <button type="submit" class="btn btn--editar">Editar</button>
-        <input type="hidden" name="id" value="{{food.id}}">
-      </div>
+
+<div class="form__create">
+  <h2>Editando Receita</h2>
+  <div class="tets" > 
+    <form method="POST" action="/admin/recipes?_method=DELETE">
+      <button type="submit" class="btn btn--excluir">Excluir</button>
+      <input type="hidden" name="id" value="{{food.id}}">
+    </form>
+    <form method="POST" action="/admin/recipes?_method=PUT">
+
+            <button type="submit" class="btn btn--editar">Editar</button>
+            <input type="hidden" name="id" value="{{food.id}}">
+      {% include 'admin/filds.njk'%}
+    </form>
   </div>
-  {% include 'admin/filds.njk'%}
-</form>
-<form method="POST" action="/admin/recipes?_method=DELETE" class="form create">
-  <button type="submit" class="btn btn--excluir">Excluir</button>
-  <input type="hidden" name="id" value="{{food.id}}">
-</form>
-        
-      
-      
-    
-
-
+</div>
 {% endblock content%}

@@ -199,6 +199,7 @@ body{
 
 .list__img--page{
   height: 100%;
+  max-height: 280px;
 }
 
 .list__title--page{
@@ -262,7 +263,6 @@ body{
   margin-bottom: 55px;
 }
 
-.form__create,
 .revenues__manage{
   display: flex;
   justify-content: space-between;
@@ -293,7 +293,6 @@ body{
   padding: 4px 8px;
   width: 100%;
 }
-
 
 /*btn componente */
 
