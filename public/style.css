@@ -222,7 +222,7 @@ body{
   color: #111111;
   font-weight: bold;
 }
-
+/* 
 .recipe__btn{
   background-color: transparent;
   color: #999999;
@@ -231,6 +231,7 @@ body{
   font-size: 12px;
   text-transform: uppercase;
 }
+ */
 
 .recipe__preparation{
   padding-top: 20px;
@@ -280,18 +281,23 @@ body{
   margin-top: 30px;
 }
 
-.form__box{
-  margin-top: 10px;
-  gap: 8px;
-  align-items: center;
-}
-
 .form__input{
   border-radius: 4px;
   border: 1px solid #DDDDDD;
   font-size: var(--size-text-p2);
   padding: 4px 8px;
   width: 100%;
+}
+
+.form__acoes{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.form__title{
+  font-size: 24px;
 }
 
 /*btn componente */

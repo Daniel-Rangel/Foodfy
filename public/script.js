@@ -4,6 +4,10 @@ const cxEsconder = document.querySelectorAll(".recipe__preparation")
 const includInput = document.querySelectorAll(".add-input-js")
 const deleteInput = document.querySelectorAll(".del-input-js")
 const boxInputs = document.querySelectorAll(".box-js")
+const form = document.querySelector(".form-js")
+
+
+console.log(form.setAttribute('action', 'action'))
 
 btns.forEach((x, index) => {
   btns[index].addEventListener('click', () => {
@@ -55,4 +59,8 @@ const createInput = (type, val, denomination, classes ) => {
   }
 
   return input
+}
+
+let editOrDel = (acao) =>{
+  form.setAttribute('action')
 }
