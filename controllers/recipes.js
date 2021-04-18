@@ -108,7 +108,6 @@ exports.put = function(req, res){
             return true
         }
     })
-    console.log(req.body)
 
     if(!foundRecipe) return res.send("Recipe not found")
 
