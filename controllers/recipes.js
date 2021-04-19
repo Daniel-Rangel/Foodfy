@@ -75,7 +75,6 @@ exports.post = function(req, res){
         return res.redirect(`/admin/recipes`)
     })
 
-    //return res.redirect('/admin/recipes')
 }
 
 exports.create = function(req, res){

@@ -21,19 +21,18 @@
     <div class="form__btn">
       <button 
         type="submit" 
-        class="btn btn--editar" 
-        onclick="editOrDel('/admin/recipes?_method=PUT')"
-      >Salvar receita</button>
-
-      <button 
-        type="submit" 
         class="btn btn--excluir"
         onclick="editOrDel('/admin/recipes?_method=DELETE')"
       >Excluir</button>
+
+      <button 
+        type="submit" 
+        class="btn btn--editar" 
+        onclick="editOrDel('/admin/recipes?_method=PUT')"
+      >Salvar receita</button>
     </div>
   </div>
   <input type="hidden" name="id" value="{{food.id}}">
   {% include 'admin/filds.njk'%}
 </form>
-      <button onclick="editOrDel('FEITO AA')">teste</button>
 {% endblock content%}

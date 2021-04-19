@@ -71,6 +71,7 @@ body{
   position: relative;
 }
 
+
 .showcase__title{
   color: var(--titulo-h);
   font-size: var(--size-text-p3);
@@ -274,17 +275,23 @@ body{
   color: #111111;
   font-size: 16px;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .form__recepe:first-child{
   margin-top: 30px;
 }
 
+.form__recepe > .form__description{
+  display: block;
+  padding-bottom: 10px;
+}
+
 .form__input{
   border-radius: 4px;
   border: 1px solid #DDDDDD;
   font-size: var(--size-text-p2);
+  margin-bottom: 10px;
   padding: 4px 8px;
   width: 100%;
 }
@@ -352,7 +359,7 @@ body{
 }
 
 .btn--primare{
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .btn--recipe{

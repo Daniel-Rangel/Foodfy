@@ -138,6 +138,21 @@
         "açúcar de confeiteiro e corte em quadrados."
       ],
       "information": ""
+    },
+    {
+      "id": 6,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/lasanha.png",
+      "title": "Lazanha",
+      "author": "Lucas Henrique",
+      "ingredients": [
+        "asdasd",
+        "massa um"
+      ],
+      "preparation": [
+        "assim",
+        "adasdasd"
+      ],
+      "information": "khbhub"
     }
   ]
 }

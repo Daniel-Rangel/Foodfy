@@ -1,8 +1,8 @@
 const cards = document.querySelectorAll(".list__item-js")
 const btns = document.querySelectorAll(".btn--recipe")
 const cxEsconder = document.querySelectorAll(".recipe__preparation")
-const includInput = document.querySelectorAll(".add-input-js")
-const deleteInput = document.querySelectorAll(".del-input-js")
+const btnIncludInput = document.querySelectorAll(".add-input-js")
+//const deleteInput = document.querySelectorAll(".del-input-js")
 const boxInputs = document.querySelectorAll(".box-js")
 const form = document.querySelector(".form-js")
 
@@ -23,32 +23,25 @@ cards.forEach( (x , index) => {
   })
 })
 
+//craiação
 boxInputs.forEach((x , i)=>{
 
-  includInput[i].addEventListener('click', ()=>{
+  btnIncludInput[i].addEventListener('click', ()=>{
 
     let nameText = boxInputs[i].firstElementChild.getAttribute('name')
     
-    let inputButton = createInput('button', 'x', '' , 'btn btn--delete delete-js')
-    let inputText = createInput('text', '', nameText , 'form__input del-input-js')
-
-    boxInputs[i].style.display = 'grid'
-    boxInputs[i].style.gridTemplateColumns = '1fr 45px'
-    
+    let inputText = createInput('text', nameText , 'form__input')
+        
     boxInputs[i].appendChild(inputText)
-    boxInputs[i].appendChild(inputButton)
-
   })
-  
 })
 
-const createInput = (type, val, denomination, classes ) => {
+const createInput = (type, denomination, classes ) => {
 
   let cls = classes.split(' ')
   let input = document.createElement('input')
 
   input.type = type
-  input.value = val
   input.name = denomination
 
   for( clas of cls){
