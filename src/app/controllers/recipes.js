@@ -1,7 +1,22 @@
 const { query } = require("express")
-const data = require('../data.json')
 const fs = require('fs')
+const Recipe = require('../model/recipe')
 
+module.exports = {
+    about(req, res){
+        return res.render('sobre')
+    },
+    recipes(req, res){
+        return res.render('receitas', {foods : Recipe})
+    },
+    show(req, res){
+        return res.render('receita', {foods})
+    },
+    index(req, res){
+        return res. render('admin/recipes', {foods})
+    }
+}
+/* 
 exports.sobre = function(req, res){
     return res.render('sobre')
 }
@@ -9,6 +24,7 @@ exports.sobre = function(req, res){
 exports.receitas = function(req, res){
     return res.render('receitas', {foods : data.receitas })
 }
+
 
 exports.show = function(req, res){
     const food = data.receitas // Array de receitas carregadas do data.js
@@ -24,6 +40,9 @@ exports.show = function(req, res){
 exports.index = function(req, res){
     return res.render('admin/recipes' , {foods : data.receitas} )
 }
+
+ */
+
 
 exports.show1 = function(req, res){
     const food = data.receitas // Array de receitas carregadas do data.js
