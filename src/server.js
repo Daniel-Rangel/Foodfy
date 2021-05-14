@@ -19,7 +19,7 @@ nunjucks.configure('src/app/views', {
   noCache: true
 })
 
-server.listen('3000', function(){
+server.listen(5000, function(){
   return console.log('Rodando seu server')
 })
 

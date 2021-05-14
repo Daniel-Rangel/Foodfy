@@ -3,17 +3,34 @@ const fs = require('fs')
 const Recipe = require('../model/recipe')
 
 module.exports = {
+    index(req, res){
+        const foods = []
+        Recipe.all(function(recipes){
+ 
+            for(let food of recipes ){
+                if(foods.length < 6){
+                    foods.push(food)
+                }
+            }
+            return res.render('index' , {foods : recipes})
+        })
+    },
     about(req, res){
         return res.render('sobre')
     },
     recipes(req, res){
-        return res.render('receitas', {foods : Recipe})
+        
+        Recipe.all(function(Recipes){
+            return res.render('receitas', {foods : Recipes})
+        })
+
     },
     show(req, res){
-        return res.render('receita', {foods})
+
+        return res.render('receita')
     },
-    index(req, res){
-        return res. render('admin/recipes', {foods})
+    index2(req, res){
+        return res. render('admin/recipes')
     }
 }
 /* 
@@ -53,7 +70,7 @@ exports.show1 = function(req, res){
         informacao : food[foodIndex].information.replace(/\n/g, '<br>') 
     })
 }
-
+/* 
 exports.post = function(req, res){
     const keys = Object.keys(req.body)
 
@@ -158,4 +175,4 @@ exports.delete = (req, res) => {
     })
 
     res.redirect(`/admin/recipes`)
-}
+} */
