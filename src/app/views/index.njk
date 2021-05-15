@@ -19,7 +19,7 @@
       <h1 class="revenues__accessed">Mais acessadas</h1>
       <section class="lists lists--pointer">
         {% for food in foods %}
-          <article class="list__item list__item-js">
+          <article class="list__item list__item-js" id="{{food.id}}">
             <div class="list__figure ">
               <img src="{{food.image}}" alt="" class="list__img">
             </div>

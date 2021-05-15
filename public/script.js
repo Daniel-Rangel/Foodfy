@@ -16,9 +16,10 @@ btns.forEach((x, index) => {
   })
 })
 
-cards.forEach( (x , index) => {
-  cards[index].addEventListener('click', ()=>{
-    const id = index
+cards.forEach( (x , i) => {
+  cards[i].addEventListener('click', ()=>{
+    const id = cards[i].getAttribute('id')
+    console.log(i)
     window.location.href = `/recipes/${id}`
   })
 })

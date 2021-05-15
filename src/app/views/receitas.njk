@@ -4,7 +4,7 @@
     <section class="revenues">
       <section class="lists lists--pointer">
         {% for food in foods %}
-          <article class="list__item list__item-js">
+          <article class="list__item list__item-js" id="{{food.id}}">
             <div class="list__figure">
               <img src="{{food.image}}" alt="{{food.title}}" class="list__img">
             </div>

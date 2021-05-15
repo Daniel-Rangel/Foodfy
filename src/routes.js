@@ -4,11 +4,9 @@ const recipes = require('./app/controllers/recipes')
 
 
 routes.get('/', recipes.index)
-  /* 
 routes.get('/sobre', recipes.about)
-routes.get('/recipes', recipes.receitas)
-routes.get('/recipes/:index', recipes.show)
- */
+routes.get('/recipes', recipes.recipes)
+routes.get('/recipes/:index', recipes.recipeShow)
 
 /* 
 //Recipes

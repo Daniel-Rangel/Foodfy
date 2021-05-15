@@ -1,5 +1,6 @@
 const { query } = require("express")
 const fs = require('fs')
+const { type } = require("os")
 const Recipe = require('../model/recipe')
 
 module.exports = {
@@ -19,15 +20,14 @@ module.exports = {
         return res.render('sobre')
     },
     recipes(req, res){
-        
         Recipe.all(function(Recipes){
             return res.render('receitas', {foods : Recipes})
         })
-
     },
-    show(req, res){
-
-        return res.render('receita')
+    recipeShow(req, res){
+        Recipe.show(req.params.index,function(Recipe){
+            return res.render('receita', {food : Recipe} )
+        })
     },
     index2(req, res){
         return res. render('admin/recipes')

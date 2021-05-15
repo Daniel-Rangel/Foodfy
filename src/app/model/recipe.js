@@ -11,6 +11,19 @@ module.exports = {
             callback(results.rows)
         })
     },
+    show(id, callback){
+
+        const query = `
+            SELECT * 
+            FROM recipes 
+            WHERE id = $1
+        `
+        
+        db.query(query,[id],function(err, results){
+            if(err) throw `Databesa Error ${err}`
+            callback(results.rows[0])
+        })
+    },
     create(data, callback){
         const query = `
             INSERT INTO recipes (
