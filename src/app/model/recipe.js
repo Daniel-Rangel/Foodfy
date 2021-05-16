@@ -11,7 +11,7 @@ module.exports = {
             callback(results.rows)
         })
     },
-    show(id, callback){
+    find(id, callback){
 
         const query = `
             SELECT * 
@@ -37,7 +37,6 @@ module.exports = {
             ) VALUES ($1, $2, $3, $4, $5, $6,$7)
             RETURNING id
         `
-
         const values = [
             data.author,
             data.image,
@@ -46,10 +45,8 @@ module.exports = {
             data.preparation,
             data.information
         ]
-
         db.query(query, values, function(err , results) {
             if (err) throw `Database error: ${err}`
-
             callback(results.rows)
         })
     }

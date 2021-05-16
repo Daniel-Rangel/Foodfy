@@ -25,13 +25,26 @@ module.exports = {
         })
     },
     recipeShow(req, res){
-        Recipe.show(req.params.index,function(Recipe){
+        Recipe.find(req.params.id,function(Recipe){
+            
             return res.render('receita', {food : Recipe} )
         })
     },
-    index2(req, res){
-        return res. render('admin/recipes')
+    admRecipes(req, res){
+        Recipe.all(function(recipes){
+            return res.render('admin/recipes' , {foods : recipes})
+        })
+    },
+    admCreateRecipes(req, res){
+        return res.render('admin/create')
+    },
+    admEditRecipes(req, res){
+        Recipe.find(req.params.id , function(recipes){
+            
+            return res.render('admin/edit', {food : recipes})
+        })
     }
+
 }
 /* 
 exports.sobre = function(req, res){
@@ -60,8 +73,8 @@ exports.index = function(req, res){
 
  */
 
-
-exports.show1 = function(req, res){
+/* 
+exports.showAdminRecipe = function(req, res){
     const food = data.receitas // Array de receitas carregadas do data.js
     const foodIndex = req.params.id
    
@@ -70,6 +83,8 @@ exports.show1 = function(req, res){
         informacao : food[foodIndex].information.replace(/\n/g, '<br>') 
     })
 }
+
+ */
 /* 
 exports.post = function(req, res){
     const keys = Object.keys(req.body)
