@@ -1,3 +1,4 @@
+const { date } = require('../../lib/utils')
 const { query } = require("express")
 const fs = require('fs')
 const { type } = require("os")
@@ -35,14 +36,33 @@ module.exports = {
             return res.render('admin/recipes' , {foods : recipes})
         })
     },
+    admPost(req, res){
+        const keys = Object.keys(req.body)
+
+        for(key of keys) {
+            if(req.body[key] == ""){
+                return res.send("por favor, preencha todos os campos")
+            }
+        }
+
+        let dateNow = date(Date.now()).iso
+
+        let recipe = [
+            ...keys,
+        ]
+
+        recipe.push({dateNow})
+        console.log(recipe)
+
+    },
+    admCreateRecipes(req, res){
+        return res.render('admin/create')
+    },
     admRecipe(req, res){
         Recipe.find(req.params.id,function(Recipe){
             
             return res.render('admin/recipe', {food : Recipe} )
         })
-    },
-    admCreateRecipes(req, res){
-        return res.render('admin/create')
     },
     admEditRecipes(req, res){
         Recipe.find(req.params.id , function(recipes){
@@ -50,34 +70,7 @@ module.exports = {
             return res.render('admin/edit', {food : recipes})
         })
     }
-
 }
-/* 
-exports.sobre = function(req, res){
-    return res.render('sobre')
-}
-
-exports.receitas = function(req, res){
-    return res.render('receitas', {foods : data.receitas })
-}
-
-
-exports.show = function(req, res){
-    const food = data.receitas // Array de receitas carregadas do data.js
-    const foodIndex = req.params.index
-    
-    return res.render('receita', { 
-        food : food[foodIndex], 
-        informacao : food[foodIndex].information.replace(/\n/g, '<br>') 
-    } )
-}
-
-// admin
-exports.index = function(req, res){
-    return res.render('admin/recipes' , {foods : data.receitas} )
-}
-
- */
 
 /* 
 exports.showAdminRecipe = function(req, res){
@@ -89,51 +82,9 @@ exports.showAdminRecipe = function(req, res){
         informacao : food[foodIndex].information.replace(/\n/g, '<br>') 
     })
 }
-
  */
+
 /* 
-exports.post = function(req, res){
-    const keys = Object.keys(req.body)
-
-    for(key of keys) {
-        if(req.body[key] == ""){
-            return res.send("por favor, preencha todos os campos")
-        }
-    }
-
-    let {
-        image,
-        title,
-        author,
-        ingredients,
-        preparation,
-        information
-    } = req.body
-
-    let id = 1
-    const latrecipes = data.receitas[data.receitas.length - 1]
-    if(latrecipes){
-        id = latrecipes.id + 1
-    }
-
-    data.receitas.push({
-        id,
-        image,
-        title,
-        author,
-        ingredients,
-        preparation,
-        information
-    })
-
-    fs.writeFile('data.json', JSON.stringify(data, null, 2), function(err){
-        if(err) return res.send('erro ao requisitar dados')
-
-        return res.redirect(`/admin/recipes`)
-    })
-
-}
-
 exports.create = function(req, res){
     return res.render('admin/create')
 }

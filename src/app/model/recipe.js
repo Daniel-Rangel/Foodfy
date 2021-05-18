@@ -45,9 +45,11 @@ module.exports = {
             data.preparation,
             data.information
         ]
+        
         db.query(query, values, function(err , results) {
             if (err) throw `Database error: ${err}`
             callback(results.rows)
         })
-    }
+    },
+    
 }
