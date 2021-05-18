@@ -1,5 +1,9 @@
 {% extends "layout.njk" %}
 
+{% block title %}
+  <title>FoodFy - Editar</title>
+{% endblock title %}
+
 {% block header %}
   <header class="menu--black">
       <nav class="menu container">
@@ -11,10 +15,7 @@
 {% endblock header %}
 
 {% block content %}
-{# <form method="POST" action="/admin/recipes?_method=DELETE">
-  <input type="hidden" name="id" value="{{food.id}}">
-  /admin/recipes?_method=PUT
-</form> #}
+  
 <form class="form__create form-js" method="POST" action="">
   <div class="form__acoes">
     <h2 class="form__title">Editando Receita</h2>

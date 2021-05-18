@@ -24,8 +24,8 @@ module.exports = {
             return res.render('receitas', {foods : Recipes})
         })
     },
-    recipeShow(req, res){
-        Recipe.find(req.params.id,function(Recipe){
+    recipe(req, res){
+        Recipe.find(req.params.index,function(Recipe){
             
             return res.render('receita', {food : Recipe} )
         })
@@ -33,6 +33,12 @@ module.exports = {
     admRecipes(req, res){
         Recipe.all(function(recipes){
             return res.render('admin/recipes' , {foods : recipes})
+        })
+    },
+    admRecipe(req, res){
+        Recipe.find(req.params.id,function(Recipe){
+            
+            return res.render('admin/recipe', {food : Recipe} )
         })
     },
     admCreateRecipes(req, res){
