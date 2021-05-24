@@ -17,7 +17,7 @@ module.exports = {
             return res.render('index' , {foods : recipes})
         })
     },
-    about(req, res){
+    on(req, res){
         return res.render('sobre')
     },
     recipes(req, res){
@@ -38,22 +38,22 @@ module.exports = {
     },
     admPost(req, res){
         const keys = Object.keys(req.body)
-
+        
+        
         for(key of keys) {
             if(req.body[key] == ""){
                 return res.send("por favor, preencha todos os campos")
             }
         }
 
-        let dateNow = date(Date.now()).iso
+        const recipes = {
+            ...req.body,
+            'created_at' : date(Date.now()).iso
+        }
 
-        let recipe = [
-            ...keys,
-        ]
-
-        recipe.push({dateNow})
-        console.log(recipe)
-
+        Recipe.create(recipes, (recipes) => {
+            return res.redirect(`/admin/recipes/${recipes.id}`)
+        })
     },
     admCreateRecipes(req, res){
         return res.render('admin/create')
