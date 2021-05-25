@@ -39,7 +39,6 @@ module.exports = {
     admPost(req, res){
         const keys = Object.keys(req.body)
         
-        
         for(key of keys) {
             if(req.body[key] == ""){
                 return res.send("por favor, preencha todos os campos")
@@ -65,9 +64,25 @@ module.exports = {
         })
     },
     admEditRecipes(req, res){
+        
         Recipe.find(req.params.id , function(recipes){
             
             return res.render('admin/edit', {food : recipes})
+        })
+    },
+    admPutRecipes(req, res){
+        const keys = Object.keys(req.body)
+        
+        for(key of keys) {
+            if(req.body[key] == ""){
+                return res.send("por favor, preencha todos os campos")
+            }
+        }
+
+        console.log(req.body)
+
+        Recipe.update(req.body, function(recipes){
+            return res.redirect(`/admin/recipes/${req.body.id}`)
         })
     }
 }
