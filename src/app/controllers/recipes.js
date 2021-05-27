@@ -84,6 +84,13 @@ module.exports = {
         Recipe.update(req.body, function(recipes){
             return res.redirect(`/admin/recipes/${req.body.id}`)
         })
+    },
+    admDelete(req, res){
+
+        console.log(req.body.id)
+        Recipe.delete(req.body.id, function(recipes){
+            return res.redirect(`admin/recipes`)
+        })
     }
 }
 

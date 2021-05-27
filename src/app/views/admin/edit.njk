@@ -16,7 +16,7 @@
 
 {% block content %}
   
-<form class="form__create form-js" method="POST" action="">
+<form class="form__create form-js" method="POST" action="admin/recipes">
   <div class="form__acoes">
     <h2 class="form__title">Editando Receita</h2>
     <div class="form__btn">
@@ -32,8 +32,8 @@
         onclick="editOrDel('/admin/recipes?_method=PUT')"
       >Salvar receita</button>
     </div>
+    <input type="hidden" name="id" value="{{food.id}}">
   </div>
-  <input type="hidden" name="id" value="{{food.id}}">
   {% include 'admin/filds.njk'%}
 </form>
 {% endblock content%}
