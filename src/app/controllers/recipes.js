@@ -1,42 +1,13 @@
 const { date } = require('../../lib/utils')
-const { query } = require("express")
-const fs = require('fs')
-const { type } = require("os")
 const Recipe = require('../model/recipe')
 
 module.exports = {
-    index(req, res){
-        const foods = []
-        Recipe.all(function(recipes){
- 
-            for(let food of recipes ){
-                if(foods.length < 6){
-                    foods.push(food)
-                }
-            }
-            return res.render('index' , {foods : recipes})
-        })
-    },
-    on(req, res){
-        return res.render('sobre')
-    },
-    recipes(req, res){
-        Recipe.all(function(Recipes){
-            return res.render('receitas', {foods : Recipes})
-        })
-    },
-    recipe(req, res){
-        Recipe.find(req.params.index,function(Recipe){
-            
-            return res.render('receita', {food : Recipe} )
-        })
-    },
-    admRecipes(req, res){
+    Recipes(req, res){
         Recipe.all(function(recipes){
             return res.render('admin/recipes' , {foods : recipes})
         })
     },
-    admPost(req, res){
+    Post(req, res){
         const keys = Object.keys(req.body)
         
         for(key of keys) {
@@ -54,23 +25,23 @@ module.exports = {
             return res.redirect(`/admin/recipes/${recipes.id}`)
         })
     },
-    admCreateRecipes(req, res){
+    Create(req, res){
         return res.render('admin/create')
     },
-    admRecipe(req, res){
+    Recipe(req, res){
         Recipe.find(req.params.id,function(Recipe){
             
             return res.render('admin/recipe', {food : Recipe} )
         })
     },
-    admEditRecipes(req, res){
+    Edit(req, res){
         
         Recipe.find(req.params.id , function(recipes){
             
             return res.render('admin/edit', {food : recipes})
         })
     },
-    admPutRecipes(req, res){
+    Put(req, res){
         const keys = Object.keys(req.body)
         
         for(key of keys) {
@@ -85,8 +56,7 @@ module.exports = {
             return res.redirect(`/admin/recipes/${req.body.id}`)
         })
     },
-    admDelete(req, res){
-
+    Delete(req, res){
         console.log(req.body.id)
         Recipe.delete(req.body.id, function(recipes){
             return res.redirect(`admin/recipes`)
