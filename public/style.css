@@ -44,6 +44,7 @@ body{
 
 .menu__Itens{
   display: flex;
+  align-items: center;
   gap: var(--gap-1);
   list-style: none;
   margin-left: 9%;
@@ -372,4 +373,12 @@ body{
 
 .btn--esconder{
   display: none;
+}
+
+.itens--style{
+  font-family: 'Roboto';
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: #999999;
+  font-weight: 500;
 }

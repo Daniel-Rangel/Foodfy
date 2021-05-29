@@ -4,7 +4,7 @@ const Recipe = require('../model/recipe')
 module.exports = {
     Recipes(req, res){
         Recipe.all(function(recipes){
-            return res.render('admin/recipes' , {foods : recipes})
+            return res.render('admin/recipes/recipes' , {foods : recipes})
         })
     },
     Post(req, res){
@@ -22,23 +22,23 @@ module.exports = {
         }
 
         Recipe.create(recipes, (recipes) => {
-            return res.redirect(`/admin/recipes/${recipes.id}`)
+            return res.redirect(`admin/recipes/recipes/${recipes.id}`)
         })
     },
     Create(req, res){
-        return res.render('admin/create')
+        return res.render('admin/recipes/create')
     },
     Recipe(req, res){
         Recipe.find(req.params.id,function(Recipe){
             
-            return res.render('admin/recipe', {food : Recipe} )
+            return res.render('admin/recipes/recipe', {food : Recipe} )
         })
     },
     Edit(req, res){
         
         Recipe.find(req.params.id , function(recipes){
             
-            return res.render('admin/edit', {food : recipes})
+            return res.render('admin/recipes/edit', {food : recipes})
         })
     },
     Put(req, res){
@@ -53,13 +53,13 @@ module.exports = {
         console.log(req.body)
 
         Recipe.update(req.body, function(recipes){
-            return res.redirect(`/admin/recipes/${req.body.id}`)
+            return res.redirect(`admin/recipes/recipes/${req.body.id}`)
         })
     },
     Delete(req, res){
         console.log(req.body.id)
         Recipe.delete(req.body.id, function(recipes){
-            return res.redirect(`admin/recipes`)
+            return res.redirect(`admin/recipes/recipes`)
         })
     }
 }
