@@ -1,0 +1,69 @@
+
+{% extends "layout.njk" %}
+
+{% block header %}
+  <header class="menu--black">
+      <nav class="menu container">
+          <a href="/admin/recipes" class="button">
+            <img src="/img/logo-1.png" alt="Logo">
+          </a>
+          <ul class="menu__Itens">
+            <li class="menu__item"><a href="/admin/recipes" class="button itens--style">Receita</a></li>
+            <li class="menu__item"><a href="/admin/chefs" class="button itens--style">Chef</a></li>
+          </ul>
+      </nav>
+  </header>
+{% endblock header %}
+
+{% block content %}
+      <form methods="POST" action="" class="item_page">
+        <h2>Receita: {{food.title}}</h2>
+        <a href="/admin/recipes/{{food.id}}/edit" class="btn btn--editar">Editar receita</a>
+      </form>
+
+      <section class="lists lists--page">
+          
+          <article class="list__item list__item--page">
+            <div>
+              <img src="{{food.image}}" alt="{{food.title}}" class="list__img list__img--page">
+            </div>
+            <h1 class="list__title list__title--page">{{food.title}}</h1>
+            <p class="list__cooker list__cooker--page">por {{food.author}}</p>
+          </article>
+          
+          <article class="recipe">
+            <div class="recipe__content">
+              <h2 class="recipe__title">Ingredientes <span class="btn btn--recipe">esconder</span></h2>
+              <div class="recipe__preparation">
+                <ul class="recipe__itens">
+                    {% for item in food.ingredients %}
+                      <li class="recipe__item">
+                        <p class="recipe__texto">{{item}}</p>
+                      </li>
+                    {% endfor %}
+                </ul>
+              </div>
+            </div>
+
+            <div class="recipe__content">
+              <h2 class="recipe__title">Modo de Preparo <span class="btn btn--recipe">esconder</span></h2>
+              <div class="recipe__preparation">
+                <ul class="recipe__itens">
+                {% for item in food.preparation %}
+                  <li class="recipe__item">
+                    <p class="recipe__texto">{{item}}</p>
+                  </li>
+                {% endfor %}
+                </ul>
+              </div>
+            </div>
+
+            <div class="recipe__content">
+              <h2 class="recipe__title">Informações adicionais <span class="btn btn--recipe">esconder</span></h2>
+              <div class="recipe__preparation">
+                <p class="recipe__texto">{{food.information}}</p>
+              </div>
+            </div>
+          </article>
+      </section>
+{% endblock content %}

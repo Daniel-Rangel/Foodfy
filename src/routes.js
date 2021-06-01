@@ -21,7 +21,10 @@ routes.put("/admin/recipes", recipes.Put) // Editar uma receita
 routes.delete("/admin/recipes", recipes.Delete) // Deletar uma receita
 
 //Chef
-routes.get("/admin/chefs", chefs.Create)
+routes.get("/admin/chefs/create", chefs.Create)
+routes.get("/admin/chefs/:id" , chefs.Chef)
+routes.post('/admin/chefs', chefs.Post)
+//routes.get("/admin/chefs/:id/edit" , chef.Edit)
 
 
 module.exports = routes

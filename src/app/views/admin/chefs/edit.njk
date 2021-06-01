@@ -19,30 +19,17 @@
 {% endblock header %}
 
 {% block content %}
-    <form method="POST" action="/admin/recipes">
+    <form method="POST" action="/admin/chefs">
+
       <div class="form__acoes">
         <h2 class="form__title">Criando chef</h2>
-        <button type="submit" class="btn btn--editar">Salvar chef</button>
+        <button 
+            type="submit" 
+            class="btn btn--editar"
+            onclick="editOrDel('/admin/chefs?_method=PUT')"
+        >Editar Chef</button>
       </div>
-            
-      <div class="form__recepe">
-          <label for="author_receita" class="form__description">Nome</label>
-          <input 
-              type="text" 
-              name="author"
-              id="author_receita" 
-              class="form__input">
-      </div>
-      <div class="form__recepe">
-          <label for="title_receita" class="form__description">Avatar</label>
-          <input 
-              type="url" 
-              name="title" 
-              id="title_receita" 
-              class="form__input"
-          >
-      </div>
-
- 
+      
+      {% include 'admin/chef/filds.njk'%}
     </form>
 {% endblock content%}
