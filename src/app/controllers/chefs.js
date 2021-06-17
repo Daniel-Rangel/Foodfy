@@ -2,9 +2,12 @@ const { date } = require('../../lib/utils')
 const Chef = require('../model/chef')
 
 module.exports = {
+    all(req, res){
+        
+    },
     Chef(req,res){
-        Chef.find(req.params.id , (chef)=>{
-            res.render('admin/chefs/chef' , chef)
+        Chef.find(req.params.id , (Chef)=>{
+            return res.render('admin/chefs/chef' , {Chef})
         })
     },
     Create(req,res){
@@ -25,10 +28,12 @@ module.exports = {
         }
         
         Chef.create(chefs , (chef)=>{
-            res.redirect(`/admin/chefs/${chef.id}`)
+            return res.redirect(`admin/chefs/${chef.id}`)
         })
     },
     Edit(req,res){
-        return res.render('admin/chefs/edit')
+        Chef.find(req.params.id, function(Chefs){
+            return res.render(`admin/chefs/edit`, {Chefs})
+        })
     }
 }

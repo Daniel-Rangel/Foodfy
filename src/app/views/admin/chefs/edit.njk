@@ -23,13 +23,21 @@
 
       <div class="form__acoes">
         <h2 class="form__title">Criando chef</h2>
-        <button 
-            type="submit" 
-            class="btn btn--editar"
-            onclick="editOrDel('/admin/chefs?_method=PUT')"
-        >Editar Chef</button>
+        <div>
+          <button 
+              type="submit" 
+              class="btn btn--excluir"
+              onclick="editOrDel('/admin/chefs?_method=DELETE')"
+          >Deletar</button>
+          <button 
+              type="submit" 
+              class="btn btn--editar"
+              onclick="editOrDel('/admin/chefs?_method=PUT')"
+          >Editar Chef</button>
+        </div>
+        <input type="hidden" name="id" value="{{Chefs.id}}">
       </div>
       
-      {% include 'admin/chef/filds.njk'%}
+      {% include 'admin/chefs/filds.njk'%}
     </form>
 {% endblock content%}
